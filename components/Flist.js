@@ -30,10 +30,11 @@ export const Flist = () => {
             },
       ];
   return (
-    <View>
+    <View >
       <Text style={External.heading}>Component with Flat List</Text>
       <FlatList 
       data={user}
+      keyExtractor={(item, index) => item.id}
       renderItem={({item})=> <UserData item={item} />}
       
        />

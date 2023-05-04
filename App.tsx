@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import type { PropsWithChildren } from 'react';
+// import type { PropsWithChildren } from 'react';
 import External from './External';
 import Btn from './components/Button';
 import User from './components/User'
@@ -22,7 +22,8 @@ import {
   View,
 } from 'react-native';
 import Counting from './components/Counting';
-import Parents from './components/Parents';
+// import Child from './components/Child';
+// import Parents from './components/Parents';
 
 
 
@@ -55,10 +56,12 @@ let Home = () => {
       <Listmp /> */}
      {/* <Form/> */}
      
-      <ScrollView>
-        <Parents />
-      <Counting/>
      <UserList/>
+      <ScrollView>
+        {/* <Parents /> */}
+        {/* <Child /> */}
+      <Counting/>
+    
       
        <UserLogin />
       <Button
