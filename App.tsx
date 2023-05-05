@@ -22,6 +22,7 @@ import {
   View,
 } from 'react-native';
 import Counting from './components/Counting';
+import Rbtn from './components/Rbtn';
 // import Child from './components/Child';
 // import Parents from './components/Parents';
 
@@ -55,13 +56,13 @@ let Home = () => {
    
       <Listmp /> */}
      {/* <Form/> */}
-     
+    
      <UserList/>
       <ScrollView>
         {/* <Parents /> */}
         {/* <Child /> */}
+        <Rbtn />
       <Counting/>
-    
       
        <UserLogin />
       <Button
