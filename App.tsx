@@ -23,6 +23,7 @@ import {
 } from 'react-native';
 import Counting from './components/Counting';
 import Rbtn from './components/Rbtn';
+import Checkb from './components/Checkb';
 // import Child from './components/Child';
 // import Parents from './components/Parents';
 
@@ -47,21 +48,22 @@ let Home = () => {
   return (
     <View>
     
-      {/* <Teacher />
-       <Slist/>
-       <Flist />
+      {/* <Teacher /> */}
+       {/* <Slist/> */}
+       {/* <Flist /> */}
      
        
-      <Dgrid/>
+      {/* <Dgrid/> */}
    
-      <Listmp /> */}
+      {/* <Listmp /> */}
      {/* <Form/> */}
     
      <UserList/>
       <ScrollView>
         {/* <Parents /> */}
         {/* <Child /> */}
-        <Rbtn />
+        <Checkb />
+       <Rbtn />
       <Counting/>
       
        <UserLogin />
@@ -74,7 +76,7 @@ let Home = () => {
       />
       <Button title='Check Name' onPress={checkName}></Button>
       <Text style={[External.textN, styles.sectionTitle]} >This is First Android App</Text>
-      <Btn />
+      {/* <Btn /> */}
       {/* <User  name={'React Native Tutorials from props'} profession={'Reactjs Developer'} /> */}
       </ScrollView>
     </View>

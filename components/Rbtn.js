@@ -2,33 +2,47 @@ import React,{useState} from 'react';
 import { StyleSheet, View,Text, TouchableOpacity} from 'react-native';
 
 const Rbtn = () => {
-      const [selectedRadio, setSelectedRadio] = useState(2);
+      const skills = [
+            {
+                  id:1,
+                  name:'CSS'
+            },
+            {
+                  id:2,
+                  name:'HTML'
+            },
+            {
+                  id:3,
+                  name:'NEXT'
+            },
+            {
+                  id:4,
+                  name:'NODE'
+            },
+      ]
+      const [selectedRadio, setSelectedRadio] = useState(1);
   return (
-    <View style={styles.main}>
-      <TouchableOpacity onPress={()=>setSelectedRadio(1)}>
+    <View style={styles.main}>{
+      skills.map((item,index)=>
+            <TouchableOpacity
+            key={index}
+            onPress={()=>setSelectedRadio(item.id)}>
             <View style={styles.radiowrapper}>
             <View style={styles.radiobtn}>
                  {
-                 selectedRadio === 1? <View style={styles.rbg}></View>:null
+                 selectedRadio == item.id? <View style={styles.rbg}></View>:null
 
                  } 
             </View>
-      <View><Text style={styles.radiotxt}>Radio 1</Text></View>
+      <View><Text style={styles.radiotxt}>{item.name}</Text></View>
       </View>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={()=>setSelectedRadio(2)}>
-            <View style={styles.radiowrapper}>
-            <View style={styles.radiobtn}>
-            {
-                 selectedRadio === 2? <View style={styles.rbg}></View>:null
+      )
+    }
+      
 
-                 } 
-            </View>
-          
-      <View><Text style={styles.radiotxt}>Radio 2</Text></View>
-      </View>
-      </TouchableOpacity>
+      
       
       </View>
   )
