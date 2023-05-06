@@ -1,72 +1,89 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
+// import { ActivityIndicator } from 'react-native';
 // import type { PropsWithChildren } from 'react';
+
+import {
+  ActivityIndicator,
+  Button,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  
+} from 'react-native';
+import Counting from './components/Counting';
+import Rbtn from './components/Rbtn';
+import Checkb from './components/Checkb';
+import Modelbox from './components/Modelbox';
+// import Child from './components/Child';
+// import Parents from './components/Parents';
 import External from './External';
 import Btn from './components/Button';
 import User from './components/User'
 import UserLogin from './components/UserLogin';
-import Login  from './components/Login';
+import Login from './components/Login';
 import UserList from './components/UserList';
 import Listmp from './components/Listmap';
 import Dgrid from './components/Dgrid';
 import Flist from './components/Flist';
 import Slist from './components/Slist';
 import Teacher from './components/Teacher';
+import Btnpress from './components/Btnpress';
 // import Form from './components/Form';
-
-
-import {
-  Button,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
-import Counting from './components/Counting';
-import Rbtn from './components/Rbtn';
-import Checkb from './components/Checkb';
-// import Child from './components/Child';
-// import Parents from './components/Parents';
 
 
 
 
 let Home = () => {
-  
-  let [name, setName] = useState('Vishambar');
-  let pressBtn = () => {
-    console.warn('Press, Button Pressed')
+  const [show, setShow] = useState(false);
+
+  const displayLoader= () => {
+    setShow(true);
   }
-  let btnVal = (val:any) => {
-    console.warn(val)
-  }
-  let onPressLearnMore = () => {
-    console.warn('Learn More')
-  }
-  function checkName(){
-    setName('Vartika');
-  }
-  return (
-    <View>
-    
-      {/* <Teacher /> */}
-       {/* <Slist/> */}
-       {/* <Flist /> */}
-     
-       
-      {/* <Dgrid/> */}
+  setTimeout(() => {
+    setShow(false)
+  }, 3000);
+
+let [name, setName] = useState('Vishambar');
+let pressBtn = () => {
+  console.warn('Press, Button Pressed')
+}
+let btnVal = (val: any) => {
+  console.warn(val)
+}
+let onPressLearnMore = () => {
+  console.warn('Learn More')
+}
+function checkName() {
+  setName('Vartika');
+}
+return (
+  <View>
+
+    {/* <Teacher /> */}
+    {/* <Slist/> */}
+    {/* <Flist /> */}
+
+
+    {/* <Dgrid/> */}
+
+    {/* <Listmp /> */}
+    {/* <Form/> */}
+
+    <UserList />
    
-      {/* <Listmp /> */}
-     {/* <Form/> */}
-    
-     <UserList/>
-      <ScrollView>
-        {/* <Parents /> */}
-        {/* <Child /> */}
-        <Checkb />
-       <Rbtn />
-      <Counting/>
-      
-       <UserLogin />
+    <ScrollView>
+    <Btnpress/>
+    <Modelbox/>
+    <ActivityIndicator size={100} color="golden" animating={show} />
+    <Button title="Show Loader" onPress={displayLoader} />
+      {/* <Parents /> */}
+      {/* <Child /> */}
+      <Checkb />
+      <Rbtn />
+      <Counting />
+
+      <UserLogin />
       <Button
         onPress={onPressLearnMore}
         title="Learn More"
@@ -78,10 +95,10 @@ let Home = () => {
       <Text style={[External.textN, styles.sectionTitle]} >This is First Android App</Text>
       {/* <Btn /> */}
       {/* <User  name={'React Native Tutorials from props'} profession={'Reactjs Developer'} /> */}
-      </ScrollView>
-    </View>
-    
-  );
+    </ScrollView>
+  </View>
+
+);
 }
 
 const styles = StyleSheet.create({
