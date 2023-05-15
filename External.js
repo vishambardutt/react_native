@@ -9,6 +9,7 @@ export default External = StyleSheet.create({
             padding:20,
             margin:10,
             textAlign:'center',
+            
            
             
 

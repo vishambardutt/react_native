@@ -1,7 +1,9 @@
-import React from 'react'
-import {View,Pressable,Text, StyleSheet} from 'react-native';
+import React,{useState} from 'react'
+import {View,Pressable,Text, StyleSheet,StatusBar, Button} from 'react-native';
       
 const Btnpress = () => {
+      const [hide,setHide]= useState(false)
+      const [barStyle,setBarstyle]=useState('default');
   return (
     <View style={styles.main}>
       <Pressable
@@ -12,6 +14,15 @@ const Btnpress = () => {
       onPressOut={()=>{console.warn('On Press Out')}} >
     <Text style={styles.pbtn}>I'm pressable!</Text>
   </Pressable>
+  <StatusBar backgroundColor={'#800080'}
+  barStyle={barStyle}
+  hidden={hide}/>
+ 
+      <Button title="Toggle " onPress={()=>setHide(!hide)}/>
+  
+ <Button title='Update Style' onPress={()=>setBarstyle('dark-content')}/>
+ 
+  
   </View>
   )
 }
@@ -21,6 +32,7 @@ main:{
       flex:1,
       fontSize:20,
       justifyContent:'center',
+      alignItems:'center',
 },
 pbtn:{
      backgroundColor:'#DE3163',
