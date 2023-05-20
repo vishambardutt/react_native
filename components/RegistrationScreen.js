@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 
-const LoginScreen = () => {
+const RegistrationScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    // Perform login logic here
+  const handleRegistration = () => {
+    // Perform registration logic here
+    // You can make an API request to register the user
+
+    // After successful registration, navigate to the home screen
+    navigation.navigate('Home');
   };
 
   return (
@@ -14,17 +18,17 @@ const LoginScreen = () => {
       <TextInput
         placeholder="Username"
         value={username}
-        onChangeText={setUsername}
+        onChangeText={(text) => setUsername(text)}
         style={styles.input}
       />
       <TextInput
         placeholder="Password"
-        secureTextEntry
         value={password}
-        onChangeText={setPassword}
+        onChangeText={(text) => setPassword(text)}
+        secureTextEntry
         style={styles.input}
       />
-      <Button title="Login" onPress={handleLogin} />
+      <Button title="Register" onPress={handleRegistration} />
     </View>
   );
 };
@@ -34,16 +38,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 16,
   },
   input: {
-    width: '80%',
+    width: '100%',
     height: 40,
-    borderColor: 'gray',
     borderWidth: 1,
-    marginBottom: 10,
-    paddingLeft: 10,
-    borderRadius:20,
+    borderColor: '#ccc',
+    marginBottom: 12,
+    padding: 10,
   },
 });
 
-export default LoginScreen;
+export default RegistrationScreen;

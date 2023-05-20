@@ -11,7 +11,7 @@ const Main = () => {
     <View>
       <Text style={{fontSize:15,alignContent:'center',textAlign:'center',margin:8,color:'#05BFDB',textTransform:'uppercase',textAlignVertical:'center'}}>
         Welcome to My App</Text>
-       
+        
         
     </View>
   )

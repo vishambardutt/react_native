@@ -40,39 +40,50 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import LoginScreen from './components/LoginScreen';
 import SignInScreen from './components/SignInScreen';
+import RegistrationScreen from './components/RegistrationScreen';
 import Main from './components/Main';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
+const Tab = createMaterialTopTabNavigator();
 
 let Home = () => {
-  const [show, setShow] = useState(false);
-  const btn =()=>{
-    console.warn('Home Button Clicked')
-  }
+  // const [show, setShow] = useState(false);
+  // const btn =()=>{
+  //   console.warn('Home Button Clicked')
+  // }
 
-  const displayLoader = () => {
-    setShow(true);
-  }
-  setTimeout(() => {
-    setShow(false)
-  }, 3000);
+  // const displayLoader = () => {
+  //   setShow(true);
+  // }
+  // setTimeout(() => {
+  //   setShow(false)
+  // }, 3000);
 
-  let [name, setName] = useState('Vishambar');
-  let pressBtn = () => {
-    console.warn('Press, Button Pressed')
-  }
-  let btnVal = (val: any) => {
-    console.warn(val)
-  }
-  let onPressLearnMore = () => {
-    console.warn('Learn More')
-  }
-  function checkName() {
-    setName('Vartika');
-  }
+  // let [name, setName] = useState('Vishambar');
+  // let pressBtn = () => {
+  //   console.warn('Press, Button Pressed')
+  // }
+  // let btnVal = (val: any) => {
+  //   console.warn(val)
+  // }
+  // let onPressLearnMore = () => {
+  //   console.warn('Learn More')
+  // }
+  // function checkName() {
+  //   setName('Vartika');
+  // }
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerStyle: {
+    <Tab.Navigator>
+    <Tab.Screen name="Sign In" component={SignInScreen} />
+    <Tab.Screen name="Login" component={LoginScreen} />
+    <Tab.Screen name="Registration" component={RegistrationScreen} />
+  </Tab.Navigator>
+  </NavigationContainer>
+  )
+   {/* <NavigationContainer>
+       <Stack.Navigator screenOptions={{headerStyle: {
               backgroundColor: '#FFD966',
              
             },
@@ -121,9 +132,11 @@ let Home = () => {
        
         <Stack.Screen name='Signin' component={SignInScreen} />
         
-   </Stack.Navigator>
+   </Stack.Navigator> 
+   
 
-    </NavigationContainer>
+    </NavigationContainer>*/}
+    
     
 
     //   <View>
@@ -155,8 +168,8 @@ let Home = () => {
     //       <PasscodeScreen/>
     //     {/* <Btnpress/>
     //     <Modelbox/> */}
-    //     {/* <ActivityIndicator size={100} color="golden" animating={show} />
-    //     <Button title="Show Loader" onPress={displayLoader} /> */}
+        //  <ActivityIndicator size={100} color="golden" animating={show} />
+        // <Button title="Show Loader" onPress={displayLoader} /> 
     //       {/* <Parents /> */}
     //       {/* <Child /> */}
     //       <Checkb />
@@ -178,15 +191,15 @@ let Home = () => {
     //     </ScrollView>
     //   </View>
 
-  );
-}
-const Header =()=>{
-  return(
-    <View>
-      <TextInput placeholder='you text here' style={{borderWidth:1, borderRadius:10,borderColor:'#ffccff'}}/>
-    </View>
-  )
-}
+  // );
+// }
+// const Header =()=>{
+//   return(
+//     <View>
+//       <TextInput placeholder='you text here' style={{borderWidth:1, borderRadius:10,borderColor:'#ffccff'}}/>
+//     </View>
+//   )
+// }
 
 const styles = StyleSheet.create({
   sectionContainer: {
@@ -214,10 +227,11 @@ const styles = StyleSheet.create({
     fontSize: 15,
   }
 });
+}
 
 export default Home;
 
 // function useState(arg0: string): [any, any] {
 //   throw new Error('Function not implemented.');
-// }
+
 
