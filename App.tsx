@@ -10,7 +10,8 @@ import {
   Text,
   View,
   Platform,
-  TextInput
+  TextInput,
+  ColorSchemeName
 
 } from 'react-native';
 // import Counting from './components/Counting';
@@ -36,17 +37,24 @@ import {
 // import ScreenLock from './screens/PasscodeScreen';
 // import Form from './components/Form';
 
-import { NavigationContainer } from '@react-navigation/native';
+// import { DarkTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import LoginScreen from './components/LoginScreen';
-import SignInScreen from './components/SignInScreen';
-import RegistrationScreen from './components/RegistrationScreen';
+// import LoginScreen from './components/LoginScreen';
+// import SignInScreen from './components/SignInScreen';
+// import RegistrationScreen from './components/RegistrationScreen';
 import Main from './components/Main';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+// import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import DataList from './components/DataList';
+import FlatCards from './components/FlatCards';
+import ElevatedCards from './components/ElevatedCards';
+import VisitingPlaces from './components/VisitingPlaces';
+import Apidata from './components/Apidata';
+import FlatLis from './components/FlatLis';
+// import Flist from './components/Flist';
 
 // const Stack = createNativeStackNavigator();
-const Tab = createMaterialTopTabNavigator();
-
+// const Tab = createMaterialTopTabNavigator();
+// const ColorSchemeName = DarkTheme
 let Home = () => {
   // const [show, setShow] = useState(false);
   // const btn =()=>{
@@ -74,14 +82,30 @@ let Home = () => {
   //   setName('Vartika');
   // }
   return (
-    <NavigationContainer>
-    <Tab.Navigator>
-    <Tab.Screen name="Sign In" component={SignInScreen} />
-    <Tab.Screen name="Login" component={LoginScreen} />
-    <Tab.Screen name="Registration" component={RegistrationScreen} />
-  </Tab.Navigator>
-  </NavigationContainer>
+  //   <NavigationContainer>
+  //   <Tab.Navigator>
+  //   <Tab.Screen name="Sign In" component={SignInScreen} />
+  //   <Tab.Screen name="Login" component={LoginScreen} />
+  //   <Tab.Screen name="Registration" component={RegistrationScreen} />
+  //   <Tab.Screen name="API" component={DataList} />
+  // </Tab.Navigator>
+  // </NavigationContainer>
+ 
+  <ScrollView>
+   <FlatCards />
+  <ElevatedCards/>
+  
+  <VisitingPlaces /> 
+  <DataList/>
+ <Apidata/>
+<FlatLis/>
+  </ScrollView>
+
+ 
+ 
+  
   )
+  
    {/* <NavigationContainer>
        <Stack.Navigator screenOptions={{headerStyle: {
               backgroundColor: '#FFD966',
