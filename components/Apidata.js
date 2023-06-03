@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react'
-import {View,Text,StyleSheet} from 'react-native'
+import {View,Text,StyleSheet,ScrollView} from 'react-native'
 const Apidata = () => {
 const [data,setData] = useState()
 const getAPIdata = async () => {
@@ -19,7 +19,7 @@ useEffect (()=>{
       getAPIdata()
 },[])
 return (
-      <View>
+      <ScrollView>
         <Text style={styles.headtext}>APP DATA FORM API</Text>
         {
          data && data.length ?
@@ -32,7 +32,7 @@ return (
             </View>
           ) : null
         }
-      </View>
+      </ScrollView>
     )
     
 }

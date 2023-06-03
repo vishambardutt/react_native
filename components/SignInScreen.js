@@ -18,10 +18,10 @@ const SignInScreen = () => {
   },[])
   return (
     <View>
-      <Text>API Data SignInScreen</Text>
+      <Text style={{fontSize:20,textAlign:'center',}}>API Data SignInScreen</Text>
       {
         data ? <View>
-        <Text>{data.id}</Text>
+        <Text key={data.id}>{data.id}</Text>
         <Text>{data.userId}</Text>
         <Text>{data.title}</Text>
         <Text>{data.body}</Text>

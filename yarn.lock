@@ -6501,6 +6501,11 @@
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.17.tgz"
   "version" "0.71.17"
 
+"react-native-icons@^0.7.1":
+  "integrity" "sha512-UigJh4CQ+NmRThGm/7MlkdCnuR0u3Bx3EO60gKCDNeMGM6X+vfYMVUXnruefJ5SrcSguQhkFLSS0oPm9B4+FDg=="
+  "resolved" "https://registry.npmjs.org/react-native-icons/-/react-native-icons-0.7.1.tgz"
+  "version" "0.7.1"
+
 "react-native-keychain@^6.1.1":
   "integrity" "sha512-U6fnOQRJPq+c0Abl+FoYy9v0H3kQU587tMamU/o+MoBSUScFLE3DQpkyT1PW4NF5IObgiGuqQdmjC2KgtBpjGA=="
   "resolved" "https://registry.npmjs.org/react-native-keychain/-/react-native-keychain-6.2.0.tgz"
